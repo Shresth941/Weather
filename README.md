@@ -52,32 +52,8 @@ Install dependencies:
 npm install
 Start the frontend server:
 
-bash
-Copy code
 npm start
-Access the app in your browser at http://localhost:3000.
 
-Project Structure
-
-weather-monitoring-app/
-├── backend/
-│   ├── controller/
-│   │   └── weathersummary.js      # Backend logic for weather data fetching and processing
-│   ├── model/
-│   │   └── weathermodel.js        # MongoDB schema for weather summaries
-│   ├── server.js                  # Express server setup
-│   └── .env                       # API Key configuration
-│
-├── frontend/
-│   ├── src/
-│   │   ├── Components/
-│   │   │   └── weathersummary.js  # Weather summary display component
-│   │   ├── App.js                 # Main app component
-│   ├── public/
-│   ├── package.json               # Frontend dependencies
-│
-└── README.md                      # Project documentation
-How It Works
 Backend: Every 5 minutes, the backend fetches weather data for multiple cities from the OpenWeatherMap API. It aggregates this data and stores daily summaries in MongoDB. If a city's temperature exceeds the configured threshold for two consecutive updates, an alert is generated.
 
 Frontend: The React frontend displays weather summaries for the cities, including max, min, and average temperatures. Based on the weather condition (e.g., sunny, cloudy, rainy), the app changes the background theme dynamically. Users can search for specific cities to get real-time data.
