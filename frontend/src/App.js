@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import WeatherSummary from './Components/weathersummary'; 
 import { getWeatherSummary } from './Service/weatherservice';
-import { Container, Typography, Grid, TextField, Button, Box, Alert } from '@mui/material';
+import { Container, Typography, Grid, TextField, Button, Box, Alert, ImageListItem } from '@mui/material';
 import './App.css';
 
 function App() {
@@ -86,6 +86,22 @@ function App() {
       }}
     >
       <Container maxWidth="lg" sx={{ padding: '2rem', flexGrow: 1 }}>
+        <ImageListItem 
+          sx={{
+            '&:hover img': {
+              transform: 'scale(1.1)', 
+              transition: 'transform 0.3s ease',
+            },
+          }}
+        >
+          <img
+            src={`image3.png`}
+            alt="Weather icon"
+            style={{ maxWidth: '50px', maxHeight: '50px', borderRadius: '10px' }}
+            loading="lazy"
+          />
+        </ImageListItem>
+
         <Typography
           variant="h4"
           align="center"
